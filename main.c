@@ -17,28 +17,28 @@
 bool is_prime(int);
 void titre();
 void test(int max_number);
-void affichage_des_nombres_premiers(int max_number);
+void affichage_des_nombres_premiers(int);
 
 int main()
 {
 
-//	titre();
-//
-//	printf("Time taken by the code for the number 10 : 0.000000 sec\n");
-//	printf("Time taken by the code for the number 100 : 0.015000 sec\n");
-//	printf("Time taken by the code for the number 1 000 : 0.000000 sec\n");
-//	printf("Time taken by the code for the number 10 000 : 0.090000 sec\n");
-//	printf("Time taken by the code for the number 100 000 : 0.719000 sec\n");
-//	printf("Time taken by the code for the number 100 000 : 94.990000 sec\n");
-//	printf("\n");
-//	printf("\n");
-//	printf("\n");
-//
-//	printf("Jusqu'%c o%c voulez-vous avoir la liste des nombres premiers ?\n", a_grave, u_grave);
-//	int max_number = 0;
-//	scanf("%d", &max_number);
-//	printf("\n");
-//
+	titre();
+
+	printf("Time taken by the code for the number 10 : 0.000000 sec\n");
+	printf("Time taken by the code for the number 100 : 0.015000 sec\n");
+	printf("Time taken by the code for the number 1 000 : 0.000000 sec\n");
+	printf("Time taken by the code for the number 10 000 : 0.090000 sec\n");
+	printf("Time taken by the code for the number 100 000 : 0.719000 sec\n");
+	printf("Time taken by the code for the number 100 000 : 94.990000 sec\n");
+	printf("\n");
+	printf("\n");
+	printf("\n");
+
+	printf("Jusqu'%c o%c voulez-vous avoir la liste des nombres premiers ?\n", a_grave, u_grave);
+	int max_number = 0;
+	scanf("%d", &max_number);
+	printf("\n");
+
 //
 
 
@@ -75,13 +75,13 @@ bool is_prime(int tested_number)
 
 void titre()
 {
-	printf(" ____  ____  _  _      _____   _      _     _      ____  _____ ____    _____ _  _      ____  _____ ____\n");
-	printf("/  __\\/  __\\/ \\/ \\__/|/  __/  / \\  /|/ \\ /\\/ \\__/|/  _ \\/  __//  __\\  /    // \\/ \\  /|/  _ \\/  __//  __\\\n");
-	printf("|  \\/||  \\/|| || |\\/|||  \\    | |\\ ||| | ||| |\\/||| | //|  \\  |  \\/|  |  __\\| || |\\ ||| | \\||  \\  |  \\/|\n");
-	printf("|  __/|    /| || |  |||  /_   | | \\||| \\_/|| |  ||| |_\\\\|  /_ |    /  | |   | || | \\||| |_/||  /_ |    /\n");
-	printf("\\_/   \\_/\\_\\\\_/\\_/  \\|\\____\\  \\_/  \\|\\____/\\_/  \\|\\____/\\____\\\\_/\\_\\  \\_/   \\_/\\_/  \\|\\____/\\____\\\\_/\\_\\\n");
-	printf("\n");
-	printf("\n");
+//	printf(" ____  ____  _  _      _____   _      _     _      ____  _____ ____    _____ _  _      ____  _____ ____\n");
+//	printf("/  __\\/  __\\/ \\/ \\__/|/  __/  / \\  /|/ \\ /\\/ \\__/|/  _ \\/  __//  __\\  /    // \\/ \\  /|/  _ \\/  __//  __\\\n");
+//	printf("|  \\/||  \\/|| || |\\/|||  \\    | |\\ ||| | ||| |\\/||| | //|  \\  |  \\/|  |  __\\| || |\\ ||| | \\||  \\  |  \\/|\n");
+//	printf("|  __/|    /| || |  |||  /_   | | \\||| \\_/|| |  ||| |_\\\\|  /_ |    /  | |   | || | \\||| |_/||  /_ |    /\n");
+//	printf("\\_/   \\_/\\_\\\\_/\\_/  \\|\\____\\  \\_/  \\|\\____/\\_/  \\|\\____/\\____\\\\_/\\_\\  \\_/   \\_/\\_/  \\|\\____/\\____\\\\_/\\_\\\n");
+//	printf("\n");
+//	printf("\n");
 }
 
 void test(int max_number)
@@ -110,7 +110,7 @@ void test(int max_number)
 	}
 }
 
-void affichage_des_nombres_premiers(max_number)
+void affichage_des_nombres_premiers(int max_number)
 {
 	unsigned long int tested_number = 2;
 	unsigned long int tableau[max_number];
@@ -119,7 +119,8 @@ void affichage_des_nombres_premiers(max_number)
 	printf("Liste des nombres premiers jusqu'%c %d :\n",a_grave, max_number);
 
 	// Début du chronométrage
-	clock_t time = clock();
+//	clock_t time = clock();
+	printf("\n");
 	while (tested_number <= max_number)
 	{
 		if (is_prime(tested_number))
@@ -130,13 +131,13 @@ void affichage_des_nombres_premiers(max_number)
 
 		tested_number++;
 	}
-	time = clock() - time;
+//	time = clock() - time;
 
 //	printf("  -  %d\n", tested_number);
 
-	for (unsigned long long i = 0; i < indice_tableau; i++)
+	for (unsigned long long i = 0; i < indice_tableau || tableau[i] < 0; i++)
 	{
 		printf("  -  %llu\n", tableau[i]);
 	}
-	printf("Time taken by the code %f sec.\n", ((double)time)/CLOCKS_PER_SEC);
+//	printf("Time taken by the code %f sec.\n", ((double)time)/CLOCKS_PER_SEC);
 }
